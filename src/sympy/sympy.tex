@@ -1,0 +1,107 @@
+\section{Python Packages}
+
+We will be using two nice Python packages to support this article: |SYMPY\ and \PINT. These
+packages are easily installed using the \PY\ {\bf pip} tool. Here is the line I
+used to install them on my system:
+
+\begin{Verbatim}[frame=single]
+$ pip install sympy, pint
+\end{Verbatim}
+
+\subsection{SymPy}
+
+We will be working through a bit of math in this article. I will show the
+equations in their ``normal'' form but I will be using a nice {\it Python} package
+called {\it SymPy} to generate the actual results. {\it SymPy} is a symbolic
+math engine, it manipulates {\it symbols} the same way you did back in your
+algebra class in high school. The really nice thing about {\it SymPy} is that
+it knows a lot about math, and it does not make mistakes (well, unless you do
+when you set things up!)
+
+As a simple example of what \SYMPY\ can do, let's show a bit of that algebra.
+Suppose you were asked to expand $(x + y)^3$. Here is the \PY\ code that uses
+\SYMPY\ to figure this out for you:
+
+\setpygmentsfv{frame=single, xrightmargin=1cm}
+\begin{pyblock}
+import sympy
+sympy.var("x, y")
+
+sol = sympy.expand((x + y)**3)
+
+print(r"\begin{align*}")
+print(sympy.latex(sol))
+print(r"\end{align*}")
+\end{pyblock}
+
+Those {\bf print} statements are strictly for use in this document, so things
+display nicely in the final {\it PDF file}. The result is this:
+
+\begin{pycode}
+from sympy import *
+var("x, y")
+
+sol = expand((x + y)**3)
+
+print(r"\begin{align*}")
+print(latex(sol))
+print(r"\end{align*}")
+\end{pycode}
+
+I bet you wish you had access to this tool back in your school days!
+
+\subsection{\PINT}
+
+In engineering, we absolutely must pay attention to the units we use for
+physical properties. In the U.S. we commonly use Imperial units (inches or
+feet, and ounces or pounds). Elsewhere it is more common to use Metric units
+(centimeters, or meters, and grams or kilograms). Indoor modelers seem to mix
+the two systems, using inches for lengths, and grams for weight. Failure to pay
+attention to all of this can lead to embarrassing failures, as NASA found out in
+one of their Mars expeditions when some subcontractors were using Metric units
+and everyone else was using Imperial units!
+
+Fortunately, another \PY| package can make tracking units and converting them
+as needed easy. The |PINT| package has a lot of power we can use here:
+
+\begin{pyblock}
+from pint import UnitRegistry
+ureg = UnitRegistry()
+
+rho = 0.002308 * (ureg.slug / ureg.ft**3)
+print('{:~P}'.format(rho))
+\end{pyblock}
+
+Once again, we see some trickery to get the output to look nice in a document generated using \LaTeX.
+
+Here is the result:
+
+\begin{pycode}
+from pint import UnitRegistry
+ureg = UnitRegistry()
+
+rho = 0.002308 * (ureg.slug / ureg.ft**3)
+print('{:~P}'.format(rho))
+
+\end{pycode}
+
+Who came up with ``slug'' as a unit anyway? Let's convert that to the Metric system:
+
+\begin{pyblock}
+rho_m = rho.to_base_units()
+print('{:~P}'.format(rho_m))
+\end{pyblock}
+
+\PINT\ uses the Metric system internally, so we just asked it to show those
+``base'' units:
+
+\begin{pycode}
+rho_m = rho.to_base_units()
+print('{:~P}'.format(rho_m))
+\end{pycode}
+
+This is really nice! No more digging out a calculator and googling for unit
+conversion factors!
+
+Armed with these tools, let's take a look at the atmosphere we will be flying
+through next.
