@@ -1,0 +1,26 @@
+title: Estimating Indoor Model Flight Times
+author: Roie R. Black
+logo: lpp.gif
+repository:
+  url: https://github.com/rblack42/math-magik-flight-time.git
+
+parse:
+  myst_enable_extensions:
+    - amsmath
+
+sphinx:
+    config:
+        bibtex_reference_style: author_year
+
+execute:
+  execute_notebooks: force
+
+latex:
+  targetname: nffs_symposium_2022.tex
+
+bibtex_bibfiles:
+  - references.bib
+
+html:
+  use_issues_bbutton: true
+  use_repository_button: true

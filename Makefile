@@ -10,19 +10,24 @@ reqs:
 	pip install -U pip
 	pip install -r requirements.txt
 
-.PHONY: docs
-docs:
-	cd src && \
-		sphinx-build -b html -d _build/doctrees . ../docs
-
-.phony: build
-build:
-	cd src && \
+.phony: pdf
+pdf:
+	cd tex && \
 		latexmk
 
 
 .phony: clean
 clean:
-	cd src && \
+	cd tex && \
 		latexmk -C && \
 		rm -f *.fls *.bbl *.out *.pytxcode pythontex*
+
+.PHONY: docs
+docs:
+	jupyter-book build article/
+	cp -R article/_build/html/ docs
+
+.PHONY: nb
+nb:
+	cd article && \
+		jupyter notebook
