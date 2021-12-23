@@ -9,6 +9,7 @@
 .direnv
 __pycache__
 *.py[cod]
+.ipynb_checkpoints
 
 # Sphinx
 _build

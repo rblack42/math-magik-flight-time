@@ -2,7 +2,7 @@ Estimating Indoor Model Flight Time
 ###################################
 :Author: Roie R. Black
 :Email: roie.black@gmail.com
-:Docs: rblack42.github.io/math-magik-flight-times
+:Docs: https://rblack42.github.io/math-magik-flight-times
 
 This project is part of the `Math Magik`- project.
 
