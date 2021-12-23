@@ -42,8 +42,6 @@
     <script src="_static/copybutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script>
         const thebe_selector = ".thebe"
@@ -53,6 +51,7 @@
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="1. McLean’ Method" href="mclean.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -96,6 +95,19 @@
   </a>
  </li>
 </ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="mclean.html">
+   1. McLean’ Method
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="bibliography.html">
+   2. Bibliography
+  </a>
+ </li>
+</ul>
+
     </div>
 </nav> <!-- To handle the deprecated key -->
 
@@ -200,68 +212,8 @@
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="estimating-indoor-model-flight-times">
 <h1>Estimating Indoor Model Flight Times<a class="headerlink" href="#estimating-indoor-model-flight-times" title="Permalink to this headline">¶</a></h1>
-<p>In the 1976 edition of the NFFS Symposium, Doug McLean presented a paper on estimating indoor model flight times <span id="id1">[]</span>. My goal in this paper is to recreate the calculation procedure outline by DOug and validate this trchnique using test data taken from a fellow club member Gary Hodson’s award winning “Wart” A6 model.</p>
-<p>to get started, we will set up a few data items from Gary’s best flight. We will be using Python <strong>pint</strong> to track units, so we set that system up first.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pint</span>
-<span class="n">u</span> <span class="o">=</span> <span class="n">pint</span><span class="o">.</span><span class="n">UnitRegistry</span><span class="p">()</span>
-<span class="n">Q_</span> <span class="o">=</span> <span class="n">u</span><span class="o">.</span><span class="n">Quantity</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">wart_motor_weight</span> <span class="o">=</span> <span class="mf">0.86</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">grams</span>
-<span class="n">wart_best_time</span> <span class="o">=</span> <span class="mi">618</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">seconds</span>
-<span class="n">motor_turns</span> <span class="o">=</span> <span class="mi">3660</span>
-<span class="n">kiby_dome_elevation</span> <span class="o">=</span> <span class="mi">2160</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">feet</span>
-<span class="n">kiby_dome_height</span> <span class="o">=</span> <span class="mi">150</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">feet</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>Doug starts off by assuming that the total flight time is proportional to the energy in the rubber motor divided by the thrust power of the propeller.</p>
-<p>$$</p>
-<div class="amsmath math notranslate nohighlight" id="equation-eee2bd1d-3d99-4cd7-ac8c-8e9f9b153ad6">
-<span class="eqno">(1)<a class="headerlink" href="#equation-eee2bd1d-3d99-4cd7-ac8c-8e9f9b153ad6" title="Permalink to this equation">¶</a></span>\[\begin{equation}
-t = \eta_{av} \frac{E}{P}
-\end{equation}\]</div>
-<p>$$</p>
-<p>Where:</p>
-<ul class="simple">
-<li><p><strong>t</strong> is the flight time in seconds</p></li>
-<li><p><strong>E</strong> is the energy stored in the rubber motor in kilogram meters</p></li>
-<li><p><strong>P</strong> is the thrust power (thrust x speed) required to stay in level flight in pound-force seconds</p></li>
-<li><p>$\eta_{av}$ is a proportionality constant averaged over the entire flight</p></li>
-</ul>
-<p>Next, Doug assumes that the energy stored in the motor depends primarily on motor weight according to the formula:</p>
-<p>$$</p>
-<div class="amsmath math notranslate nohighlight" id="equation-8569f12a-12c1-4f51-9d9a-5f2a77b513e0">
-<span class="eqno">(2)<a class="headerlink" href="#equation-8569f12a-12c1-4f51-9d9a-5f2a77b513e0" title="Permalink to this equation">¶</a></span>\[\begin{equation}
-E = k_m W_m
-\end{equation}\]</div>
-<p>$$</p>
-<p>Where:
-- k_m is a constant = 30,000 inches
-- w_m is the motor weight in grams</p>
-<p>We will need to convert these items to a standard energy unit system.</p>
-<p>For the Wart, we get this:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">k_m</span> <span class="o">=</span> <span class="mi">30000</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">inches</span>
-<span class="n">E</span> <span class="o">=</span> <span class="n">k_m</span> <span class="o">*</span> <span class="n">wart_motor_weight</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">E</span><span class="o">.</span><span class="n">to_base_units</span><span class="p">())</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.65532 kilogram * meter
-</pre></div>
-</div>
-</div>
-</div>
+<p>In the 1976 edition of the NFFS Symposium Doug McLean presented a method for predicting indoor model flight times <span id="id1">[<a class="reference internal" href="bibliography.html#id2">McLean, 1976</a>]</span>. This article will revisit mis techniques, and present Python code suitable for use in today’s computer driven world!</p>
+<p>This project is part of the <em>Math Mahik</em> prokect I started to host my research work into the flight of indoor model airplanes. See [Math Magik[(https://rblack42.github.io/math-magik) for more information.</p>
 <div class="toctree-wrapper compound">
 </div>
 </div>
@@ -291,6 +243,13 @@ E = k_m W_m
         
             <!-- Previous / next buttons -->
 <div class='prev-next-area'>
+    <a class='right-next' id="next-link" href="mclean.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">1. </span>McLean’ Method</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
         
         </div>
