@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>1. McLean’ Method &#8212; Estimating Indoor Model Flight Times</title>
+    <title>2. McLean’ Method &#8212; Estimating Indoor Model Flight Times</title>
     
   <link href="_static/css/theme.css" rel="stylesheet">
   <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -53,8 +53,8 @@
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="2. Bibliography" href="bibliography.html" />
-    <link rel="prev" title="Estimating Indoor Model Flight Times" href="intro.html" />
+    <link rel="next" title="3. Bibliography" href="bibliography.html" />
+    <link rel="prev" title="1. Derivation of Equations" href="derivations.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -99,14 +99,19 @@
  </li>
 </ul>
 <ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="derivations.html">
+   1. Derivation of Equations
+  </a>
+ </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   1. McLean’ Method
+   2. McLean’ Method
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="bibliography.html">
-   2. Bibliography
+   3. Bibliography
   </a>
  </li>
 </ul>
@@ -212,29 +217,29 @@
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#calculating-aerodynamic-coefficients">
-   1.1. Calculating Aerodynamic Coefficients
+   2.1. Calculating Aerodynamic Coefficients
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#profile-drag-calculations">
-     1.1.1. Profile Drag Calculations
+     2.1.1. Profile Drag Calculations
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#lift-and-thrust-calculation">
-   1.2. Lift and Thrust Calculation
+   2.2. Lift and Thrust Calculation
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#calculating-time-factor">
-   1.3. Calculating Time Factor
+   2.3. Calculating Time Factor
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#von-mises-propeller-efficiency">
-     1.3.1. Von Mises Propeller Efficiency
+     2.3.1. Von Mises Propeller Efficiency
     </a>
    </li>
   </ul>
@@ -251,10 +256,10 @@
               <div>
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="mclean-method">
-<h1><span class="section-number">1. </span>McLean’ Method<a class="headerlink" href="#mclean-method" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">2. </span>McLean’ Method<a class="headerlink" href="#mclean-method" title="Permalink to this headline">¶</a></h1>
 <p>Doug starts off by assuming that the total flight time is proportional to the energy in the rubber motor divided by the thrust power of the propeller.</p>
-<div class="amsmath math notranslate nohighlight" id="equation-cc956f83-bed3-454f-be85-dd342a11ef68">
-<span class="eqno">(1.1)<a class="headerlink" href="#equation-cc956f83-bed3-454f-be85-dd342a11ef68" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-64893d4f-199b-4506-a6f5-432d4ea3fe31">
+<span class="eqno">(2.1)<a class="headerlink" href="#equation-64893d4f-199b-4506-a6f5-432d4ea3fe31" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 t = \eta_{av} \frac{E}{P}
 \end{equation}\]</div>
 <p>Where:</p>
@@ -265,8 +270,8 @@ t = \eta_{av} \frac{E}{P}
 <li><p>$\eta_{av}$ is a proportionality constant averaged over the entire flight</p></li>
 </ul>
 <p>Next, Doug assumes that the energy stored in the motor depends primarily on motor weight according to the formula:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-8267dd21-0f13-40c4-868a-39239ee2a9d8">
-<span class="eqno">(1.2)<a class="headerlink" href="#equation-8267dd21-0f13-40c4-868a-39239ee2a9d8" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-a8d1bed0-36a7-46ae-8958-f2ce079b09d7">
+<span class="eqno">(2.2)<a class="headerlink" href="#equation-a8d1bed0-36a7-46ae-8958-f2ce079b09d7" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 E = k_m w_m
 \end{equation}\]</div>
 <p>Where:</p>
@@ -321,8 +326,8 @@ E = k_m w_m
 </div>
 </div>
 <p>The thrust power required to maintain level flight balances the model weight against the available lift, and the thrust against the model drag.</p>
-<div class="amsmath math notranslate nohighlight" id="equation-e6a2850a-3a41-4b5c-9308-c82bdf4bd943">
-<span class="eqno">(1.3)<a class="headerlink" href="#equation-e6a2850a-3a41-4b5c-9308-c82bdf4bd943" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-4df20ae6-50fe-4601-8f2c-d00cd82f988c">
+<span class="eqno">(2.3)<a class="headerlink" href="#equation-4df20ae6-50fe-4601-8f2c-d00cd82f988c" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 P = \sqrt{\frac{2w}{\rho S}}\frac{C_l^{3/2}}{C_d}\frac{w_m}{w}
 \end{equation}\]</div>
 <p>Where:</p>
@@ -348,28 +353,28 @@ P = \sqrt{\frac{2w}{\rho S}}\frac{C_l^{3/2}}{C_d}\frac{w_m}{w}
 </div>
 </div>
 <div class="section" id="calculating-aerodynamic-coefficients">
-<h2><span class="section-number">1.1. </span>Calculating Aerodynamic Coefficients<a class="headerlink" href="#calculating-aerodynamic-coefficients" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.1. </span>Calculating Aerodynamic Coefficients<a class="headerlink" href="#calculating-aerodynamic-coefficients" title="Permalink to this headline">¶</a></h2>
 <p>We need to come up with values for your $C_l$ and $C_d$, which are dependent on the model design. Doug made a few simplifying assumptions here.</p>
-<div class="amsmath math notranslate nohighlight" id="equation-d3a551bb-41d2-46c1-ac4e-d73b7e8764d2">
-<span class="eqno">(1.4)<a class="headerlink" href="#equation-d3a551bb-41d2-46c1-ac4e-d73b7e8764d2" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-c8b1f9a0-441c-49d6-add8-0d211f20ae83">
+<span class="eqno">(2.4)<a class="headerlink" href="#equation-c8b1f9a0-441c-49d6-add8-0d211f20ae83" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 C_{lf} = 1.0
 \end{equation}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-27aa904a-f7ea-4f6d-90e0-753ddae63141">
-<span class="eqno">(1.5)<a class="headerlink" href="#equation-27aa904a-f7ea-4f6d-90e0-753ddae63141" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-55ad2938-a1ee-4420-a796-1b2f4cec1e0b">
+<span class="eqno">(2.5)<a class="headerlink" href="#equation-55ad2938-a1ee-4420-a796-1b2f4cec1e0b" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 C_{mf} = -0.10
 \end{equation}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-376cae3b-1288-47e0-8848-42fe813e3864">
-<span class="eqno">(1.6)<a class="headerlink" href="#equation-376cae3b-1288-47e0-8848-42fe813e3864" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-4aa88cb9-137e-4457-9343-5c924424aa81">
+<span class="eqno">(2.6)<a class="headerlink" href="#equation-4aa88cb9-137e-4457-9343-5c924424aa81" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 C_{mr} = -0.05
 \end{equation}\]</div>
 <p>These values are based on values used in Doug’s paper.</p>
 <p>For simplicity, we will assume that the aerodynamic center of the airfoils used on the model are at the quarter chord (average) point on both the wing and stab. These values need to be tuned later.</p>
-<div class="amsmath math notranslate nohighlight" id="equation-74f641d5-1323-4578-af4e-1ebd1f81e7a6">
-<span class="eqno">(1.7)<a class="headerlink" href="#equation-74f641d5-1323-4578-af4e-1ebd1f81e7a6" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-ea491620-1d71-402a-81bf-5b022c613be3">
+<span class="eqno">(2.7)<a class="headerlink" href="#equation-ea491620-1d71-402a-81bf-5b022c613be3" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 {AR}_{wing} = \frac{b_w^2}{S_f}
 \end{equation}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-a2155735-0dc7-4f6e-9b25-ddea4797005a">
-<span class="eqno">(1.8)<a class="headerlink" href="#equation-a2155735-0dc7-4f6e-9b25-ddea4797005a" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-58fdea33-378a-4a40-8512-1213d90c0888">
+<span class="eqno">(2.8)<a class="headerlink" href="#equation-58fdea33-378a-4a40-8512-1213d90c0888" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 {AR}_{stab} = \frac{b_r^2}{S_r}
 \end{equation}\]</div>
 <p>Here:</p>
@@ -406,8 +411,8 @@ C_{mr} = -0.05
 </div>
 </div>
 <p>The equation needed to calculate the lift coefficient for the stab is given next This equation is derived by balancing the pitching moments about the CG:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-ec940bb0-4ca7-465a-8e81-17aea03a32dc">
-<span class="eqno">(1.9)<a class="headerlink" href="#equation-ec940bb0-4ca7-465a-8e81-17aea03a32dc" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-a065efb8-9918-4cb9-968d-e178dee27c7b">
+<span class="eqno">(2.9)<a class="headerlink" href="#equation-a065efb8-9918-4cb9-968d-e178dee27c7b" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 C_{lr} = 
     \frac{
         -\frac{x}{{AC}_f}
@@ -474,8 +479,8 @@ C_{lr} =
 </div>
 <p>Is this correct? We typically adjust the stab to produce a down force, meaning the lift coefficient should be negative to achieve this effect.</p>
 <p>The next equation calculates the total model lift coefficient:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-468615f2-1e60-4230-b1a2-bf27db51256e">
-<span class="eqno">(1.10)<a class="headerlink" href="#equation-468615f2-1e60-4230-b1a2-bf27db51256e" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-024614b6-9352-4619-9e86-3aa2793ff0b2">
+<span class="eqno">(2.10)<a class="headerlink" href="#equation-024614b6-9352-4619-9e86-3aa2793ff0b2" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 C_l = \frac{
         1 + \frac{
                 S_r C_{lr}
@@ -502,13 +507,13 @@ C_l = \frac{
 </div>
 </div>
 <p>The definition of the lift coefficient is given by:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-42b66ef7-0bdb-43a5-aa0c-c4fa5155c17b">
-<span class="eqno">(1.11)<a class="headerlink" href="#equation-42b66ef7-0bdb-43a5-aa0c-c4fa5155c17b" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-f102535d-6191-4e52-900a-fbf300bb618e">
+<span class="eqno">(2.11)<a class="headerlink" href="#equation-f102535d-6191-4e52-900a-fbf300bb618e" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 C_l = \frac{2w}{\rho g V^2 S}
 \end{equation}\]</div>
 <p>The predicted flight speed calculation is thus given by:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-08cbf00a-a8cc-4a63-bccc-154630fdce1d">
-<span class="eqno">(1.12)<a class="headerlink" href="#equation-08cbf00a-a8cc-4a63-bccc-154630fdce1d" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-dcfc0c6c-2931-4a92-a1d8-8cb89e06f1b8">
+<span class="eqno">(2.12)<a class="headerlink" href="#equation-dcfc0c6c-2931-4a92-a1d8-8cb89e06f1b8" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 V = \sqrt{\frac{2 w}{\rho g C_l S}}
 \end{equation}\]</div>
 <p>We will need to introduce the acceleration due to gravity to make the units work.</p>
@@ -553,13 +558,13 @@ V = \sqrt{\frac{2 w}{\rho g C_l S}}
 </div>
 <p>Gary estimated around 2 mph or “walking speed”. I walk a bit faster, so this looks reasonable.</p>
 <p>The induced drag due to the wing is given by:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-5db82dc2-c22e-4c3c-b5cb-353157399b0e">
-<span class="eqno">(1.13)<a class="headerlink" href="#equation-5db82dc2-c22e-4c3c-b5cb-353157399b0e" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-224d8c10-eee9-43e2-9e80-42eec76ed536">
+<span class="eqno">(2.13)<a class="headerlink" href="#equation-224d8c10-eee9-43e2-9e80-42eec76ed536" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 C_{dif} = \frac{1}{\pi {AR}_f}
 \end{equation}\]</div>
 <p>And the induced drag due to the stab is given by:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-c301a24b-2bbc-4b8c-a8d3-c8ddbad87a43">
-<span class="eqno">(1.14)<a class="headerlink" href="#equation-c301a24b-2bbc-4b8c-a8d3-c8ddbad87a43" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-54c03786-7cda-4a82-820e-513d26bd8aec">
+<span class="eqno">(2.14)<a class="headerlink" href="#equation-54c03786-7cda-4a82-820e-513d26bd8aec" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 C_{dir} = \frac{C_{lr}^2}{\pi {AR}_r} + 2 C_{lr}C_{dif}
 \end{equation}\]</div>
 <div class="cell docutils container">
@@ -572,8 +577,8 @@ C_{dir} = \frac{C_{lr}^2}{\pi {AR}_r} + 2 C_{lr}C_{dif}
 </div>
 </div>
 <p>The total induce drag is given by:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-39ac3a95-9ddc-4c2c-8f8a-a425555da53e">
-<span class="eqno">(1.15)<a class="headerlink" href="#equation-39ac3a95-9ddc-4c2c-8f8a-a425555da53e" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-8cdcce37-1f15-4726-b8bc-d0df2be30cbe">
+<span class="eqno">(2.15)<a class="headerlink" href="#equation-8cdcce37-1f15-4726-b8bc-d0df2be30cbe" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 C_di = \frac{C_{dif} + \frac{S_r C_{dir}}{S_f}}{1 + \frac{S_r}{S_f}}
 \end{equation}\]</div>
 <div class="cell docutils container">
@@ -591,24 +596,24 @@ C_di = \frac{C_{dif} + \frac{S_r C_{dir}}{S_f}}{1 + \frac{S_r}{S_f}}
 </div>
 </div>
 <div class="section" id="profile-drag-calculations">
-<h3><span class="section-number">1.1.1. </span>Profile Drag Calculations<a class="headerlink" href="#profile-drag-calculations" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">2.1.1. </span>Profile Drag Calculations<a class="headerlink" href="#profile-drag-calculations" title="Permalink to this headline">¶</a></h3>
 <p>McLean uses data from Max Hacklinger to estimate the effects of Reynolds number on the profile drag.</p>
-<div class="amsmath math notranslate nohighlight" id="equation-176c2331-7121-4999-93aa-f2a06e8de2a4">
-<span class="eqno">(1.16)<a class="headerlink" href="#equation-176c2331-7121-4999-93aa-f2a06e8de2a4" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-a8cee9a2-6f2d-453e-9f99-992e97d7dda6">
+<span class="eqno">(2.16)<a class="headerlink" href="#equation-a8cee9a2-6f2d-453e-9f99-992e97d7dda6" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 C_{dpf} = \frac{6.2}{\sqrt{Re_f}}
 \end{equation}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-c90b8321-79dc-4012-b09b-d07a606bc60b">
-<span class="eqno">(1.17)<a class="headerlink" href="#equation-c90b8321-79dc-4012-b09b-d07a606bc60b" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-7669859d-0651-4c71-8ce0-048ace2a9eab">
+<span class="eqno">(2.17)<a class="headerlink" href="#equation-7669859d-0651-4c71-8ce0-048ace2a9eab" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 C_{dpr} = \frac{4.3 + 1.9 C_{lr}}{\sqrt{Re_r}}
 \end{equation}\]</div>
 <p>where:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-1606ddce-fd66-4ef6-91cf-9ead5d85cd3b">
-<span class="eqno">(1.18)<a class="headerlink" href="#equation-1606ddce-fd66-4ef6-91cf-9ead5d85cd3b" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-2672518a-8abf-4021-9376-21ceccb05d86">
+<span class="eqno">(2.18)<a class="headerlink" href="#equation-2672518a-8abf-4021-9376-21ceccb05d86" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 Re_f = \frac{C_f V}{\nu}
 \end{equation}\]</div>
 <p>and</p>
-<div class="amsmath math notranslate nohighlight" id="equation-4acd1c7a-5bcc-48f6-a7a8-654c54e48e93">
-<span class="eqno">(1.19)<a class="headerlink" href="#equation-4acd1c7a-5bcc-48f6-a7a8-654c54e48e93" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-840d6096-2c5e-494f-9847-67eb37712583">
+<span class="eqno">(2.19)<a class="headerlink" href="#equation-840d6096-2c5e-494f-9847-67eb37712583" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 Re_r = \frac{C_r V}{\nu}
 \end{equation}\]</div>
 <div class="cell docutils container">
@@ -649,8 +654,8 @@ Re_r = \frac{C_r V}{\nu}
 </div>
 </div>
 <p>The total profile drag coefficient is given by:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-8288e8c3-8342-46a5-b448-128385a2aca0">
-<span class="eqno">(1.20)<a class="headerlink" href="#equation-8288e8c3-8342-46a5-b448-128385a2aca0" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-b27e60e6-0873-44fd-935a-bdcaead4d2e2">
+<span class="eqno">(2.20)<a class="headerlink" href="#equation-b27e60e6-0873-44fd-935a-bdcaead4d2e2" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 C_{dp} = \frac{C_{dpf}+\frac{S_r C_{dpr}}{S_f}}{1 + \frac{S_r}{S_f}}
     \end{equation}\]</div>
 <p>}}</p>
@@ -665,13 +670,13 @@ C_{dp} = \frac{C_{dpf}+\frac{S_r C_{dpr}}{S_f}}{1 + \frac{S_r}{S_f}}
 <div class="output text_html">0.08287969758815515 dimensionless</div></div>
 </div>
 <p>The drag coefficient of a wing mounting post is approximately:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-7b0c81fb-916b-47de-bb85-6ed4bb309416">
-<span class="eqno">(1.21)<a class="headerlink" href="#equation-7b0c81fb-916b-47de-bb85-6ed4bb309416" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-e91757ea-c363-428b-b360-db5f0154548d">
+<span class="eqno">(2.21)<a class="headerlink" href="#equation-e91757ea-c363-428b-b360-db5f0154548d" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 C_{dmp} = 1.2
 \end{equation}\]</div>
 <p>The final drag coefficient is now given by:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-cb6e556a-ce04-44ef-b9e7-4b7b94c36db8">
-<span class="eqno">(1.22)<a class="headerlink" href="#equation-cb6e556a-ce04-44ef-b9e7-4b7b94c36db8" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-c22765b4-820f-4155-a277-0233a4db1d44">
+<span class="eqno">(2.22)<a class="headerlink" href="#equation-c22765b4-820f-4155-a277-0233a4db1d44" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 C_d = C_{di} + C_{dp} + C_{dm}
 \end{equation}\]</div>
 <div class="cell docutils container">
@@ -690,7 +695,7 @@ C_d = C_{di} + C_{dp} + C_{dm}
 </div>
 </div>
 <div class="section" id="lift-and-thrust-calculation">
-<h2><span class="section-number">1.2. </span>Lift and Thrust Calculation<a class="headerlink" href="#lift-and-thrust-calculation" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.2. </span>Lift and Thrust Calculation<a class="headerlink" href="#lift-and-thrust-calculation" title="Permalink to this headline">¶</a></h2>
 <p>To maintain level flight, the lift must equal the total model weight and the thrust must equal the total drag.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -735,18 +740,18 @@ C_d = C_{di} + C_{dp} + C_{dm}
 </div>
 </div>
 <div class="section" id="calculating-time-factor">
-<h2><span class="section-number">1.3. </span>Calculating Time Factor<a class="headerlink" href="#calculating-time-factor" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.3. </span>Calculating Time Factor<a class="headerlink" href="#calculating-time-factor" title="Permalink to this headline">¶</a></h2>
 <p>The time factor, $\eta_{av}$ is given by:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-97748a65-8ee0-45c2-943b-bcaed6433971">
-<span class="eqno">(1.23)<a class="headerlink" href="#equation-97748a65-8ee0-45c2-943b-bcaed6433971" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-4bc1af4e-7ece-42f1-83c3-9423ebbcbfc5">
+<span class="eqno">(2.23)<a class="headerlink" href="#equation-4bc1af4e-7ece-42f1-83c3-9423ebbcbfc5" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \eta_{av} = F \eta_p
 \end{equation}\]</div>
 <p>Here <strong>F</strong> is a fudge factor, and $\eta_p$ is a propeller efficiency factor.</p>
 <div class="section" id="von-mises-propeller-efficiency">
-<h3><span class="section-number">1.3.1. </span>Von Mises Propeller Efficiency<a class="headerlink" href="#von-mises-propeller-efficiency" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">2.3.1. </span>Von Mises Propeller Efficiency<a class="headerlink" href="#von-mises-propeller-efficiency" title="Permalink to this headline">¶</a></h3>
 <p>From the <em>Theory of Flight</em> book, Von Mises gives this equation for propeller efficiency:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-7fe61656-e08d-458a-9d1b-85b29adbaaad">
-<span class="eqno">(1.24)<a class="headerlink" href="#equation-7fe61656-e08d-458a-9d1b-85b29adbaaad" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-52a7fe61-3dae-4cf0-b763-4c636f3a192b">
+<span class="eqno">(2.24)<a class="headerlink" href="#equation-52a7fe61-3dae-4cf0-b763-4c636f3a192b" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \eta_p = \eta_i \frac{1 - \frac{4J\epsilon}{3\pi\eta_i}}{1+\frac{2\pi\eta_i\epsilon}{3J}}    
 \end{equation}\]</div>
 <p>Where:</p>
@@ -756,13 +761,13 @@ C_d = C_{di} + C_{dp} + C_{dm}
 <li><p>$\epsilon$ is the propeller profile lift to drag ratio</p></li>
 </ul>
 <p>The propeller induced efficiency is given by:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-01dc72a1-8773-4cc2-b567-5b87fe9211d7">
-<span class="eqno">(1.25)<a class="headerlink" href="#equation-01dc72a1-8773-4cc2-b567-5b87fe9211d7" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-4bf38390-7dfd-47d1-83b6-69d524d39e65">
+<span class="eqno">(2.25)<a class="headerlink" href="#equation-4bf38390-7dfd-47d1-83b6-69d524d39e65" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \eta_i = \frac{2 - \frac{J^2\tau}{\pi^2}}{1 + \sqrt{\tau + 1}}
 \end{equation}\]</div>
 <p>Where $\tau$ is the thrust loading.</p>
-<div class="amsmath math notranslate nohighlight" id="equation-d5ab16a5-64de-4ce0-97ce-6adabff797b1">
-<span class="eqno">(1.26)<a class="headerlink" href="#equation-d5ab16a5-64de-4ce0-97ce-6adabff797b1" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-73e346ee-8ed9-428b-907d-1682c27d4e76">
+<span class="eqno">(2.26)<a class="headerlink" href="#equation-73e346ee-8ed9-428b-907d-1682c27d4e76" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \tau = \frac{2 T}{\rho V^2 S_p}
 \end{equation}\]</div>
 <p>The area of the prop disk $S_p$ is $36\pi$ for an A-6.</p>
@@ -787,8 +792,8 @@ C_d = C_{di} + C_{dp} + C_{dm}
 <div class="output text_html">0.04107435675233778 dimensionless</div></div>
 </div>
 <p>The advance ratio, <strong>J</strong>, is defined as follows:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-52276826-3f40-48fd-88a1-a71b27f086cb">
-<span class="eqno">(1.27)<a class="headerlink" href="#equation-52276826-3f40-48fd-88a1-a71b27f086cb" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-319c4919-aa26-4daf-849a-2a2ec239a4ec">
+<span class="eqno">(2.27)<a class="headerlink" href="#equation-319c4919-aa26-4daf-849a-2a2ec239a4ec" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 J = \frac{V}{\Omega r}
 \end{equation}\]</div>
 <p>Where $\Omega$ is the rotational speed in radians/second, and <strong>r</strong> is the propeller radius.</p>
@@ -842,8 +847,8 @@ J = \frac{V}{\Omega r}
 <div class="output text_html">0.7780017326734646 dimensionless</div></div>
 </div>
 <p>All that remains is to come up with the fudge factor <strong>F</strong>. NcLean provides a dimensionless height factor formula and a curve generated from a vatirty of model flight data.</p>
-<div class="amsmath math notranslate nohighlight" id="equation-489e0ca6-c145-4be9-a5c6-b29c01b841e5">
-<span class="eqno">(1.28)<a class="headerlink" href="#equation-489e0ca6-c145-4be9-a5c6-b29c01b841e5" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-43742f29-822d-4dc2-b71c-b35a83ae2f6d">
+<span class="eqno">(2.28)<a class="headerlink" href="#equation-43742f29-822d-4dc2-b71c-b35a83ae2f6d" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 H = \frac{h}{484 \frac{w_m}{w}}
 \end{equation}\]</div>
 <div class="cell docutils container">
@@ -909,17 +914,17 @@ H = \frac{h}{484 \frac{w_m}{w}}
         
             <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="intro.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="derivations.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Estimating Indoor Model Flight Times</p>
+            <p class="prev-next-title"><span class="section-number">1. </span>Derivation of Equations</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="bibliography.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">2. </span>Bibliography</p>
+        <p class="prev-next-title"><span class="section-number">3. </span>Bibliography</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

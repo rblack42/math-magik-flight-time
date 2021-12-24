@@ -1,0 +1,513 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>1. Derivation of Equations &#8212; Estimating Indoor Model Flight Times</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet">
+  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="2. McLean’ Method" href="mclean.html" />
+    <link rel="prev" title="Estimating Indoor Model Flight Times" href="intro.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/lpp.gif" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Estimating Indoor Model Flight Times</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro.html">
+   Estimating Indoor Model Flight Times
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   1. Derivation of Equations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="mclean.html">
+   2. McLean’ Method
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="bibliography.html">
+   3. Bibliography
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/derivations.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/rblack42/math-magik-flight-time.git"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/rblack42/math-magik-flight-time.git/master?urlpath=tree/derivations.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#advance-ratio">
+   1.1. Advance Ratio
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#propeller-thrust-equation">
+     1.1.1. Propeller Thrust Equation
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#propeller-torque-equation">
+     1.1.2. Propeller Torque Equation
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#propeller-power">
+     1.1.3. Propeller Power
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#propeller-efficiency">
+     1.1.4. Propeller Efficiency
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="derivation-of-equations">
+<h1><span class="section-number">1. </span>Derivation of Equations<a class="headerlink" href="#derivation-of-equations" title="Permalink to this headline">¶</a></h1>
+<p>In this section, we will use the Python <em>SymPy</em> [cite]<code class="docutils literal notranslate"><span class="pre">sympy</span></code> symbolic math package to work through the derivation of the equations found in Doug McLeans paper [cite]<code class="docutils literal notranslate"><span class="pre">mclean</span></code>.</p>
+<div class="section" id="advance-ratio">
+<h2><span class="section-number">1.1. </span>Advance Ratio<a class="headerlink" href="#advance-ratio" title="Permalink to this headline">¶</a></h2>
+<p>One of the references cited in DOug’s papae is the chapter on Peopellers found in Von MIse’s <em>Theory of FLight</em> [cite]<code class="docutils literal notranslate"><span class="pre">vonmises</span></code>. Mycopy, which cost all of $3.95, was obtained when I first started off as a freshman at Virginia Tech back in 1965!</p>
+<p>The advance ratio of a propeller is defined as follows:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-2b7d9d71-6b41-4940-bbf0-d539dd831235">
+<span class="eqno">(1.1)<a class="headerlink" href="#equation-2b7d9d71-6b41-4940-bbf0-d539dd831235" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+J = \frac{V}{nd}
+\end{equation}\]</div>
+<p>Where V is the flight velocity, <strong>n</strong> is the propeller speed in rotationa per second, and <strong>d</strong> is the propeller diameter.</p>
+<p>Let’s set this up in SymPy:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span>
+<span class="n">V</span><span class="p">,</span><span class="n">n</span><span class="p">,</span><span class="n">d</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;V n d&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">J</span> <span class="o">=</span> <span class="n">V</span> <span class="o">/</span> <span class="p">(</span><span class="n">n</span> <span class="o">*</span> <span class="n">d</span><span class="p">)</span>
+<span class="n">J</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \frac{V}{d n}\]</div>
+</div>
+</div>
+<div class="section" id="propeller-thrust-equation">
+<h3><span class="section-number">1.1.1. </span>Propeller Thrust Equation<a class="headerlink" href="#propeller-thrust-equation" title="Permalink to this headline">¶</a></h3>
+<p>The definition of the Reynolds number is:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-10164dcb-1b05-49b0-b368-5b31e66fead7">
+<span class="eqno">(1.2)<a class="headerlink" href="#equation-10164dcb-1b05-49b0-b368-5b31e66fead7" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+Re = \frac{\rho u L}{\mu}
+\end{equation}\]</div>
+<p>Where $\rho$ is the air density, <strong>u</strong> is a reference velocity, <strong>L</strong> is a reference length, and $\mu$ is the dynamic viscosity of air. These air properties can be found using the <em>Standard Atmospheric Model</em> at <a class="reference external" href="https://www.digitaldutch.com/atmoscalc/">standard Atmosphere Calculator</a>.</p>
+<p>For our propeller, we will use the propellor diameter <strong>d</strong> as the reference length</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rho</span><span class="p">,</span> <span class="n">u</span><span class="p">,</span> <span class="n">mu</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;rho u mu&#39;</span><span class="p">)</span>
+<span class="n">Re</span> <span class="o">=</span> <span class="n">rho</span> <span class="o">*</span> <span class="n">u</span> <span class="o">*</span> <span class="n">d</span> <span class="o">/</span> <span class="n">mu</span>
+<span class="n">Re</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \frac{d \rho u}{\mu}\]</div>
+</div>
+</div>
+<p>The dynamic pressure is defined as:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-22d03881-b35a-4214-9248-d78cd12a1540">
+<span class="eqno">(1.3)<a class="headerlink" href="#equation-22d03881-b35a-4214-9248-d78cd12a1540" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+q = \frac{1}{2}\rho u^2
+\end{equation}\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">q</span> <span class="o">=</span> <span class="n">rho</span> <span class="o">*</span> <span class="n">u</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="mi">2</span>
+<span class="n">q</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \frac{\rho u^{2}}{2}\]</div>
+</div>
+</div>
+<p>Let <strong>nd</strong> be the reference velocity. Then we can generate the reynolds number and dynamic pressure equations as follows:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Re_p</span> <span class="o">=</span> <span class="n">Re</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">n</span><span class="o">*</span><span class="n">d</span><span class="p">)</span>
+<span class="n">Re_p</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \frac{d^{2} n \rho}{\mu}\]</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">q_p</span> <span class="o">=</span> <span class="n">q</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">n</span><span class="o">*</span><span class="n">d</span><span class="p">)</span>
+<span class="n">q_p</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \frac{d^{2} n^{2} \rho}{2}\]</div>
+</div>
+</div>
+<p>Now define the thrust of the propeller as the product of the reference area, the dynamic pressure, and a thrust coefficient $C_t$.</p>
+<div class="amsmath math notranslate nohighlight" id="equation-3887446c-da07-4c55-be93-28fab2dc2cf4">
+<span class="eqno">(1.4)<a class="headerlink" href="#equation-3887446c-da07-4c55-be93-28fab2dc2cf4" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+T = q d^2 C_t
+\end{equation}\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">C_t</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;C_t&#39;</span><span class="p">)</span>
+<span class="n">T</span> <span class="o">=</span> <span class="n">q_p</span> <span class="o">*</span> <span class="n">d</span><span class="o">**</span><span class="mi">2</span> <span class="o">*</span> <span class="n">C_t</span> <span class="o">*</span> <span class="mi">2</span>
+<span class="n">T</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle C_{t} d^{4} n^{2} \rho\]</div>
+</div>
+</div>
+<p>Here, the $\frac{1}{2}$ has been absorbed into $C_t$.</p>
+</div>
+<div class="section" id="propeller-torque-equation">
+<h3><span class="section-number">1.1.2. </span>Propeller Torque Equation<a class="headerlink" href="#propeller-torque-equation" title="Permalink to this headline">¶</a></h3>
+<p>The torque is the moment of the propeller with respect to the propeller axis, and has another length attribute. We will define this as $$Q$$.</p>
+<div class="amsmath math notranslate nohighlight" id="equation-0ae7ab97-6d77-4be8-b916-645edadbf75e">
+<span class="eqno">(1.5)<a class="headerlink" href="#equation-0ae7ab97-6d77-4be8-b916-645edadbf75e" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+Q = q d^3 C_q
+\end{equation}\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">C_q</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;C_q&#39;</span><span class="p">)</span>
+<span class="n">Q</span> <span class="o">=</span> <span class="n">q_p</span> <span class="o">*</span> <span class="n">d</span> <span class="o">**</span><span class="mi">3</span> <span class="o">*</span> <span class="n">C_q</span> <span class="o">*</span> <span class="mi">2</span>
+<span class="n">Q</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle C_{q} d^{5} n^{2} \rho\]</div>
+</div>
+</div>
+</div>
+<div class="section" id="propeller-power">
+<h3><span class="section-number">1.1.3. </span>Propeller Power<a class="headerlink" href="#propeller-power" title="Permalink to this headline">¶</a></h3>
+<p>The power delivered by the propeller is defined as follows:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-3e9ca15a-30c6-432b-a04d-05e6ee67896d">
+<span class="eqno">(1.6)<a class="headerlink" href="#equation-3e9ca15a-30c6-432b-a04d-05e6ee67896d" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+P = 2pi Q n
+\end{equation}\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">P</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">sympy</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">Q</span> <span class="o">*</span> <span class="n">n</span>
+<span class="n">P</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle 2 \pi C_{q} d^{5} n^{3} \rho\]</div>
+</div>
+</div>
+<p>If we define $C_p$ as $\frac{C_q}{2 \pi}$, this becomes:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">C_p</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;C_p&#39;</span><span class="p">)</span>
+<span class="n">P_p</span> <span class="o">=</span> <span class="n">P</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">C_q</span><span class="p">,</span> <span class="n">C_p</span> <span class="o">/</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">sympy</span><span class="o">.</span><span class="n">pi</span><span class="p">))</span>
+<span class="n">P_p</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle C_{p} d^{5} n^{3} \rho\]</div>
+</div>
+</div>
+</div>
+<div class="section" id="propeller-efficiency">
+<h3><span class="section-number">1.1.4. </span>Propeller Efficiency<a class="headerlink" href="#propeller-efficiency" title="Permalink to this headline">¶</a></h3>
+<p>The efficiency of the propeller  is defined as the product of the advance ratio <strong>J</strong> and the ratio o f the coefficients of thrust and power.</p>
+<div class="amsmath math notranslate nohighlight" id="equation-902bc361-def0-4a69-ba15-e5eefaf0782f">
+<span class="eqno">(1.7)<a class="headerlink" href="#equation-902bc361-def0-4a69-ba15-e5eefaf0782f" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+\eta = J \frac{C_t}{C_p}
+\end{equation}\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">eta</span> <span class="o">=</span> <span class="n">J</span> <span class="o">*</span> <span class="n">C_t</span> <span class="o">/</span> <span class="n">C_p</span>
+<span class="n">eta</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \frac{C_{t} V}{C_{p} d n}\]</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="intro.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Estimating Indoor Model Flight Times</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="mclean.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">2. </span>McLean’ Method</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By Roie R. Black<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
