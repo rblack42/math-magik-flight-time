@@ -1,5 +1,8 @@
 wheel
 jupyter-book
+jupyter_contrib_nbextensions
+jupyter_nbextensions_configurator
+yapf
 numpy
 sympy
 pint

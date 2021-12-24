@@ -4,13 +4,11 @@ logo: lpp.gif
 repository:
   url: https://github.com/rblack42/math-magik-flight-time.git
 
-parse:
-  myst_enable_extensions:
-    - amsmath
-
 sphinx:
     config:
         bibtex_reference_style: author_year
+parse:
+  myst_extended_syntax: true
 
 execute:
   execute_notebooks: force

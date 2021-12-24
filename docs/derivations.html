@@ -255,15 +255,18 @@
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="derivation-of-equations">
 <h1><span class="section-number">1. </span>Derivation of Equations<a class="headerlink" href="#derivation-of-equations" title="Permalink to this headline">¶</a></h1>
-<p>In this section, we will use the Python <em>SymPy</em> [cite]<code class="docutils literal notranslate"><span class="pre">sympy</span></code> symbolic math package to work through the derivation of the equations found in Doug McLean’s paper [cite]<code class="docutils literal notranslate"><span class="pre">mclean</span></code>.</p>
+<p>In this section, we will use the Python <em>SymPy</em> <span id="id1">[<a class="reference internal" href="bibliography.html#id4">Developers, 2021</a>]</span> symbolic math package to work through the derivation of the equations found in Doug McLean’s paper <span id="id2">[<a class="reference internal" href="bibliography.html#id2">McLean, 1976</a>]</span>.</p>
+<p>The derivations use Python <em>SymPy</em> to to most mathematical manipulations. <em>SymPy</em> is a symbolic math package that knows a lot of advanced math. I will keep the examples as simple as possible, and will try to explain what is going on as we work through this material.</p>
+<p>:::{warning} Parential Alert!
+Parents may want to hide this tool from their kids. It makes hard math surprisingly easy. Of course, you can use <em>SymPy</em> to figure out that kid’s homework. YMMV!
+:::</p>
 <div class="section" id="advance-ratio">
 <h2><span class="section-number">1.1. </span>Advance Ratio<a class="headerlink" href="#advance-ratio" title="Permalink to this headline">¶</a></h2>
-<p>One of the references cited in Doug’s paper is the chapter on Peopellers found in Von Mises’ <em>Theory of FLight</em> [cite]<code class="docutils literal notranslate"><span class="pre">vonmises</span></code>. My copy  of this book, which cost all of $3.95, was obtained when I first started off as a freshman at Virginia Tech back in 1965!</p>
+<p>One of the references cited in Doug’s paper is the chapter on Peopellers found in Von Mises’ <em>Theory of Flight</em> [cite]<code class="docutils literal notranslate"><span class="pre">vonmises</span></code>. My copy  of this book, which cost all of $3.95, was obtained when I first started off as a freshman at Virginia Tech back in 1965!</p>
 <p>The <em>advance ratio</em> of a propeller is defined as follows:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-1e788908-a4f0-474c-860a-4caed16a6b04">
-<span class="eqno">(1.1)<a class="headerlink" href="#equation-1e788908-a4f0-474c-860a-4caed16a6b04" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<p>\begin{equation}
 J = \frac{V}{nd}
-\end{equation}\]</div>
+\end{equation}</p>
 <p>Where <strong>V</strong> is the flight velocity, <strong>n</strong> is the propeller speed in rotations per second, and <strong>d</strong> is the propeller diameter.</p>
 <p>Let’s set this up in SymPy:</p>
 <div class="cell docutils container">
@@ -274,27 +277,26 @@ J = \frac{V}{nd}
 </div>
 </div>
 </div>
+<p>The first two lines above initializes <em>SymPy</em>, and the <em>IPython</em> package to provide a way to display expressions in a more familiar format. The last line tells Python (and <em>SymPy</em>) that we want to use the names <strong>V</strong>, <strong>n</strong>, and <strong>d</strong> as <em>symbols</em>, not normal Python variables. This is essential when using the <em>SymPy</em> system.</p>
+<p>With this setup complete, we can create our first <em>SymPy</em> expression.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">J</span> <span class="o">=</span> <span class="n">V</span> <span class="o">/</span> <span class="p">(</span><span class="n">n</span> <span class="o">*</span> <span class="n">d</span><span class="p">)</span>
-<span class="n">J</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_latex math notranslate nohighlight">
-\[\displaystyle \frac{V}{d n}\]</div>
 </div>
-</div>
+<p>J = {{J}}</p>
+<p>This line creates a symbolic expression and saves it in the Python variable <strong>J</strong>. This looks exactly like the equation above, however <strong>J</strong> is just a normal Python variable holding special <em>SymPy</em> constructs that allow it to process the symbolic expression we created.</p>
+<p>The display shown above looks exactly like the original equation we displayed earlier. However, the <strong>J =</strong> part is not part of the <em>SymPy</em> expression. THat is just a printing trick I am using so you can verify that the expression on the right hand side of the <strong>=</strong> is correct.</p>
 <div class="section" id="propeller-thrust-equation">
 <h3><span class="section-number">1.1.1. </span>Propeller Thrust Equation<a class="headerlink" href="#propeller-thrust-equation" title="Permalink to this headline">¶</a></h3>
 <p>The definition of the Reynolds number is:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-0a478313-71b4-4065-abf6-3e685d258d53">
-<span class="eqno">(1.2)<a class="headerlink" href="#equation-0a478313-71b4-4065-abf6-3e685d258d53" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<p>\begin{equation}
 Re = \frac{\rho u L}{\mu}
-\end{equation}\]</div>
-<p>Where $\rho$ is the air density, <strong>u</strong> is a reference velocity, <strong>L</strong> is a reference length, and $\mu$ is the dynamic viscosity of air. These air properties can be found using the <em>Standard Atmospheric Model</em> at <a class="reference external" href="https://www.digitaldutch.com/atmoscalc/">standard Atmosphere Calculator</a>.</p>
-<p>For our propeller, we will use the propellor diameter <strong>d</strong> as the reference length</p>
+\end{equation}</p>
+<p>Where <span class="math notranslate nohighlight">\(\rho\)</span> is the air density, <strong>u</strong> is a reference velocity, <strong>L</strong> is a reference length, and <span class="math notranslate nohighlight">\(\mu\)</span> is the dynamic viscosity of air. These air properties can be found using the <em>Standard Atmospheric Model</em> at <a class="reference external" href="https://www.digitaldutch.com/atmoscalc/">standard Atmosphere Calculator</a>.</p>
+<p>For our propeller work, we will use the propeller diameter <strong>d</strong> as the reference length.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rho</span><span class="p">,</span> <span class="n">u</span><span class="p">,</span> <span class="n">mu</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;rho u mu&#39;</span><span class="p">)</span>
@@ -309,10 +311,9 @@ Re = \frac{\rho u L}{\mu}
 </div>
 </div>
 <p>The dynamic pressure is defined as:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-7fa1f82f-7154-4622-9644-110d822283d1">
-<span class="eqno">(1.3)<a class="headerlink" href="#equation-7fa1f82f-7154-4622-9644-110d822283d1" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<p>\begin{equation}
 q = \frac{1}{2}\rho u^2
-\end{equation}\]</div>
+\end{equation}</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">q</span> <span class="o">=</span> <span class="n">rho</span> <span class="o">*</span> <span class="n">u</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="mi">2</span>
@@ -350,11 +351,10 @@ q = \frac{1}{2}\rho u^2
 \[\displaystyle \frac{d^{2} n^{2} \rho}{2}\]</div>
 </div>
 </div>
-<p>Now define the thrust of the propeller as the product of the reference area, the dynamic pressure, and a thrust coefficient $C_t$.</p>
-<div class="amsmath math notranslate nohighlight" id="equation-9e891715-6514-4eb5-b9f2-81334f22f2d7">
-<span class="eqno">(1.4)<a class="headerlink" href="#equation-9e891715-6514-4eb5-b9f2-81334f22f2d7" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<p>Now define the thrust of the propeller as the product of the reference area, the dynamic pressure, and a thrust coefficient <span class="math notranslate nohighlight">\(C_t\)</span>.</p>
+<p>\begin{equation}
 T = q d^2 C_t
-\end{equation}\]</div>
+\end{equation}</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">C_t</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;C_t&#39;</span><span class="p">)</span>
@@ -368,15 +368,14 @@ T = q d^2 C_t
 \[\displaystyle C_{t} d^{4} n^{2} \rho\]</div>
 </div>
 </div>
-<p>Here, the $\frac{1}{2}$ has been absorbed into $C_t$.</p>
+<p>Here, the <span class="math notranslate nohighlight">\(\frac{1}{2}\)</span> has been absorbed into <span class="math notranslate nohighlight">\(C_t\)</span>.</p>
 </div>
 <div class="section" id="propeller-torque-equation">
 <h3><span class="section-number">1.1.2. </span>Propeller Torque Equation<a class="headerlink" href="#propeller-torque-equation" title="Permalink to this headline">¶</a></h3>
-<p>The torque is the moment of the propeller with respect to the propeller axis, and has another length attribute. We will define this as $$Q$$.</p>
-<div class="amsmath math notranslate nohighlight" id="equation-16e58113-f1ec-4db8-a376-83cb87d898d0">
-<span class="eqno">(1.5)<a class="headerlink" href="#equation-16e58113-f1ec-4db8-a376-83cb87d898d0" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<p>The torque is the moment of the propeller with respect to the propeller axis, and has another length attribute. We will define this as $<span class="math notranslate nohighlight">\(Q\)</span>$.</p>
+<p>\begin{equation}
 Q = q d^3 C_q
-\end{equation}\]</div>
+\end{equation}</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">C_q</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;C_q&#39;</span><span class="p">)</span>
@@ -394,10 +393,9 @@ Q = q d^3 C_q
 <div class="section" id="propeller-power">
 <h3><span class="section-number">1.1.3. </span>Propeller Power<a class="headerlink" href="#propeller-power" title="Permalink to this headline">¶</a></h3>
 <p>The power delivered by the propeller is defined as follows:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-08f03d17-d331-41cc-bdf4-d0a172075724">
-<span class="eqno">(1.6)<a class="headerlink" href="#equation-08f03d17-d331-41cc-bdf4-d0a172075724" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<p>\begin{equation}
 P = 2pi Q n
-\end{equation}\]</div>
+\end{equation}</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">P</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">sympy</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">Q</span> <span class="o">*</span> <span class="n">n</span>
@@ -410,7 +408,7 @@ P = 2pi Q n
 \[\displaystyle 2 \pi C_{q} d^{5} n^{3} \rho\]</div>
 </div>
 </div>
-<p>If we define $C_p$ as $\frac{C_q}{2 \pi}$, this becomes:</p>
+<p>If we define <span class="math notranslate nohighlight">\(C_p\)</span> as <span class="math notranslate nohighlight">\(\frac{C_q}{2 \pi}\)</span>, this becomes:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">C_p</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;C_p&#39;</span><span class="p">)</span>
@@ -428,10 +426,9 @@ P = 2pi Q n
 <div class="section" id="propeller-efficiency">
 <h3><span class="section-number">1.1.4. </span>Propeller Efficiency<a class="headerlink" href="#propeller-efficiency" title="Permalink to this headline">¶</a></h3>
 <p>The efficiency of the propeller  is defined as the product of the advance ratio <strong>J</strong> and the ratio of the coefficients of thrust and power.</p>
-<div class="amsmath math notranslate nohighlight" id="equation-15b36b55-cbdf-41ac-8c1e-befa8491ac11">
-<span class="eqno">(1.7)<a class="headerlink" href="#equation-15b36b55-cbdf-41ac-8c1e-befa8491ac11" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<p>\begin{equation}
 \eta = J \frac{C_t}{C_p}
-\end{equation}\]</div>
+\end{equation}</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">eta</span> <span class="o">=</span> <span class="n">J</span> <span class="o">*</span> <span class="n">C_t</span> <span class="o">/</span> <span class="n">C_p</span>
