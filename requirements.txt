@@ -1,13 +1,2 @@
-wheel
 jupyter-book
-jupyter_contrib_nbextensions
-jupyter_nbextensions_configurator
-yapf
-numpy
-sympy
-pint
-matplotlib
-git+git://github.com/mkrphys/ipython-tikzmagic.git
-sphinxcontrib-tikz
-imageio
-version_information
+
