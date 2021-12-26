@@ -1,14 +1,19 @@
 # Book settings
 # Learn more at https://jupyterbook.org/customize/config.html
 
-title: My sample book
-author: The Jupyter Book Community
+title: Estimating Indoor Model Flight Times
+author: Roie R. Black
 logo: lpp.gif
 
 # Force re-execution of notebooks on each build.
 # See https://jupyterbook.org/content/execute.html
 execute:
   execute_notebooks: force
+
+# enable extended math support
+parse:
+  myst_enable_extensions:
+    - amsmath
 
 # Define the name of the latex output file for PDF builds
 latex:

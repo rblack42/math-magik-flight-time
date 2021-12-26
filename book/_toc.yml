@@ -3,5 +3,6 @@ root: intro
 options:
   numbered: True
 chapters:
+- file: derivations
 - file: bibliography
 

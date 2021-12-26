@@ -5,6 +5,5 @@ all:
 
 include $(MK)/python.mk
 include $(MK)/help.mk
-include $(MK)/debug.mk
 include $(MK)/jupyter.mk
 
