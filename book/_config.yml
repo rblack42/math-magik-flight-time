@@ -3,7 +3,9 @@
 
 title: Estimating Indoor Model Flight Times
 author: Roie R. Black
+copyright: 2022
 logo: lpp.gif
+exclude_patterns: [_build, .DS_Store, "**.ipynb_checkpoints"]
 
 # Force re-execution of notebooks on each build.
 # See https://jupyterbook.org/content/execute.html
@@ -14,6 +16,16 @@ execute:
 parse:
   myst_enable_extensions:
     - amsmath
+    - colon_fence
+    - deflist
+    - dollarmath
+    - html_admonition
+    - html_image
+    - linkify
+    - replacements
+    - smartquotes
+    - substitution
+  myst_url_schemes = ("http", "https", "mailto")
 
 # Define the name of the latex output file for PDF builds
 latex:

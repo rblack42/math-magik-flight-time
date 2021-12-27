@@ -1,2 +1,5 @@
 jupyter-book
-Jupiter-contrib-nbextensions:w
+jupyter-contrib-nbextensions
+pint
+matplotlib
+sympy
