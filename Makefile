@@ -1,5 +1,5 @@
 PROJECT := flight-time
-MK	:= ~/_sys/mk
+MK	:= mk
 
 all:
 

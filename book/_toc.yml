@@ -1,8 +1,12 @@
 format: jb-book
-root: intro
+root: content/intro
 options:
   numbered: True
 chapters:
-- file: derivations
-- file: bibliography
+- file: content/test-model
+- file: content/derivations
+- file: content/mclean
+- file: content/setting-up-environment
+- file: content/contributing
+- file: content/zbibliography
 
