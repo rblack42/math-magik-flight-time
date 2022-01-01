@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-#   erbach.py
+#   Erbach.py
 #   ~~~~~~~~~
 #
 #   Python implementation of Walter Erbach's C64 Basic program

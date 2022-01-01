@@ -1,0 +1,14 @@
+* 2022-01-01: woring on erbach code
+* 2021-12-30: added refs from past symposiums
+* 2021-12-26: added model data page
+* 2021-12-25: cleanup on propeller derivations
+* 2021-12-25: rework to fix math issues
+* 2021-12-24: begin hosting on mybinder
+* 2021-12-23: fix to dollar math
+* 2021-12-23: fixed typos in derivations
+* 2021-12-23: start on derivation of equations
+* 2021-12-23: first pass using doug's equations works
+* 2021-12-23: modified README
+* 2021-12-22: cleanup
+* 2021-12-22: merged jupyter-book anf latex pdf materials
+* 2021-10-29: initial commit

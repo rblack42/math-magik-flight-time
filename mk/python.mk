@@ -21,7 +21,7 @@ pyreqs: requirements.txt 	## Load Python requirements
 
 .PHONY: test
 test: ## Run unit tests
-	tox -v
+	pytest --cov=mmflyer tests/
 
 .PHONY: changes
 changes:	## create CHANGES file from git logs

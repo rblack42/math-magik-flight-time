@@ -1,6 +1,36 @@
+# Qt Gui requirements
+PyQt5
+
+# PyTest requirements
+pytest
+pytest-mock
+pytest-qt
+pytest-cov
+coverage
+coveralls
+
+# cli requirements
+click
+click-default-group
+
+# Application reqs
+numpy-stl
+openpyxl
+sympy
+scipy
+pint
+matplotlib
+git+git://github.com/mkrphys/ipython-tikzmagic.git
+pyyaml
+# Package management
+bump2version
+twine
+
+# Documentation
+sphinx
+sphinxcontrib-spelling
+sphinxcontrib-programoutput
+sphinxcontrib-napoleon
 jupyter-book
 jupyter-contrib-nbextensions
 pint
-matplotlib
-scipy
-sympy
