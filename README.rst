@@ -58,9 +58,9 @@ Math Magik Flyer
     :alt: development status
     :target: https://pypi.org/project/mmflyer
 
-.. |commits-since| image:: https://img.shields.io/github/commits-since/rblack42/math-magik-flight-time/v0.1.0.svg
+.. |commits-since| image:: https://img.shields.io/github/commits-since/rblack42/math-magik-flight-time/v0.1.1.svg
     :alt: Commits since latest release
-    :target: https://github.com/rblack42/math-magik-flight-time/compare/v0.1.0...main
+    :target: https://github.com/rblack42/math-magik-flight-time/compare/v0.1.1...main
 
 ..  image:: rst/_static/lpp.gif
     :align: center
