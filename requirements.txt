@@ -2,4 +2,5 @@ jupyter-book
 jupyter-contrib-nbextensions
 pint
 matplotlib
+scipy
 sympy
