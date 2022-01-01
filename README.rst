@@ -17,28 +17,28 @@ Math Magik Flyer
 
 
 
-.. |github| image:: https://github.com/rblack42/math-magik/actions/workflows/python-app.yml/badge.svg
+.. |github| image:: https://github.com/rblack42/math-magik-flight-time/actions/workflows/python-app.yml/badge.svg
     :alt: Github Workflows
     :target: https://github.com/rblack42/math-magik
 
-.. |travis| image:: https://travis-ci.com/rblack42/math-magik.svg?branch=main
+.. |travis| image:: https://travis-ci.com/rblack42/math-magik-flight-time.svg?branch=main
     :alt: Travis-CI Build Status
     :target: https://travis-ci.com/rblack42/math-magik
 
 .. |appveyor| image:: https://ci.appveyor.com/api/projects/status/pevivsa6n5adw5lw?svg=true
     :alt: AppVeyor Build Status
-    :target: https://ci.appveyor.com/project/rblack42/math-magik
+    :target: https://ci.appveyor.com/project/rblack42/math-magik-flight-time
 
 
-.. |coverage| image:: https://coveralls.io/repos/github/rblack42/math-magik/badge.svg?branch=main
-    :target: https://coveralls.io/github/rblack42/math-magik?branch=main
+.. |coverage| image:: https://coveralls.io/repos/github/rblack42/math-magik-flight-time/badge.svg?branch=main
+    :target: https://coveralls.io/github/rblack42/math-magik-flight-time?branch=main
     :alt: Code Coverage"
 
-.. |requires| image:: https://requires.io/github/rblack42/math-magik/requirements.svg?branch=main
+.. |requires| image:: https://requires.io/github/rblack42/math-magik-flight-time/requirements.svg?branch=main
     :alt: Requirements Status
-    :target: https://requires.io/github/rblack42/math-magik/requirements/?branch=main
+    :target: https://requires.io/github/rblack42/math-magik-flight-time/requirements/?branch=main
 
-.. |version| image:: https://img.shields.io/pypi/v/mmdesigner.svg
+.. |version| image:: https://img.shields.io/pypi/v/mmflyer.svg
     :alt: PyPI Package latest release
     :target: https://pypi.org/project/mmflyer
 
