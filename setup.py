@@ -30,14 +30,13 @@ setup(
     packages=['mmflyer'],
 entry_points= {
         "console_scripts": [
-            "mmd = mmdesigner.cli:cli"
+            "mmf = mmflyer.cli:cli"
         ]
     },
-    python_requires='>=3.7, <3.10',
+    python_requires='>=3.7',
     classifiers=[
         'Development Status :: 4 - Beta',
         'Intended Audience :: Developers',
-        'Framework :: tox',
         'License :: OSI Approved :: BSD License',
         'Programming Language :: Python',
         'Programming Language :: Python :: 3',

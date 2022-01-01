@@ -29,4 +29,3 @@ def test_deps_cmd():
     runner = CliRunner()
     result = runner.invoke(cli, ['deps'])
     assert result.exit_code == 0
-    assert "OpenSCAD" in result.output

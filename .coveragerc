@@ -1,5 +1,5 @@
 [run]
-include = mmflyer/*
+source = mmflyer/*
 omit = *test_*
 branch = True
 

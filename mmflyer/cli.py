@@ -30,7 +30,7 @@ class CLI(click.MultiCommand):
     def get_command(self, ctx, name):
         """import cli command file on demand"""
         try:
-            mod = __import__(f"mmdesigner.commands.cmd_{name}", None, None, ["cli"])
+            mod = __import__(f"mmflyer.commands.cmd_{name}", None, None, ["cli"])
         except ImportError: # pragma: no cover
             return
         return mod.cli

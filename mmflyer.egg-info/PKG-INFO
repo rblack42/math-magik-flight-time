@@ -9,7 +9,6 @@ License: BSD
 Platform: UNKNOWN
 Classifier: Development Status :: 4 - Beta
 Classifier: Intended Audience :: Developers
-Classifier: Framework :: tox
 Classifier: License :: OSI Approved :: BSD License
 Classifier: Programming Language :: Python
 Classifier: Programming Language :: Python :: 3
@@ -19,7 +18,7 @@ Classifier: Programming Language :: Python :: 3.9
 Classifier: Programming Language :: Python :: Implementation :: CPython
 Classifier: Programming Language :: Python :: Implementation :: PyPy
 Classifier: Topic :: Software Development :: Testing
-Requires-Python: >=3.7, <3.10
+Requires-Python: >=3.7
 Description-Content-Type: text/x-rst
 
 Math Magik Flyer
@@ -82,9 +81,9 @@ Math Magik Flyer
     :alt: development status
     :target: https://pypi.org/project/mmflyer
 
-.. |commits-since| image:: https://img.shields.io/github/commits-since/rblack42/math-magik-flight-time/v0.1.10.svg
+.. |commits-since| image:: https://img.shields.io/github/commits-since/rblack42/math-magik-flight-time/v0.1.0.svg
     :alt: Commits since latest release
-    :target: https://github.com/rblack42/math-magik-flight-time/compare/v0.1.10...main
+    :target: https://github.com/rblack42/math-magik-flight-time/compare/v0.1.0...main
 
 ..  image:: rst/_static/lpp.gif
     :align: center
