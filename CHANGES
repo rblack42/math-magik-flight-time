@@ -1,3 +1,6 @@
+* 2022-01-01: added appveyor
+* 2022-01-01: fixup for cli testing
+* 2022-01-01: code setup and pypi install
 * 2022-01-01: woring on erbach code
 * 2021-12-30: added refs from past symposiums
 * 2021-12-26: added model data page
