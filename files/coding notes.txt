@@ -1,0 +1,50 @@
+power = 0.196 in-oz/sec
+
+SI units = kg m^2/sec^3 = 1 watt
+
+in-oz = kg-m
+
+power = kg-m/sec
+
+g= 9.81 m / sec^2
+
+mass units = kg
+
+force = ma = kg m /sec^2
+
+power = force * velocity = kg m /sec^2 m/sec = kg m^2/sec^3
+
+drag = power / velocity
+
+density = kg/m^3
+
+density * velocity^2  * area = kg m^4/(sec^2 m^3) = kg m /sec^2
+
+pressure = force / m^2 = kg m /(m^2 sec^2) = kg / (m sec^2)
+
+Moment arms: CG is measured in percentage of wing chord
+
+R = SA * math.pi/180.0
+
+DW = WC * (CG - 0.25)
+EWLA = WH * sin(R) + DW * cos(R)
+FWDA = WH * cos(R) - DW * sin(R)
+GTLA = (TA - DW)*cos(R)
+HTDA = (TA - DW)* sin(R)
+
+JMWL = AWL * EWLA
+KWMD = BWD * FWFA
+LMTL = -CTL * GTLA
+MWTD = DTD * HTDA
+
+M = JMWL + KMWD + LMTL + MWTD
+
+Figure 3 parameters:
+
+Main axes Power and pitching moment vs angle of attack
+
+One power curve
+
+A set of Pitching moment curves, for varying values of CG from 30% to 100%r
+
+VE = (WT/(0.00119*SW*(L(J+WI/2)+PCW*L(J))))**0.5

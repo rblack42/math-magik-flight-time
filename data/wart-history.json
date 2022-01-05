@@ -1,0 +1,367 @@
+[
+	{
+		"date":	2001,
+		"Pitch": 45,
+		"motor": {
+		  "weight": 0.90,
+      "size": "40x42",
+		  "length": 17.5
+    },
+		"flight": {
+		  "turns": 3375,
+		  "time": "8:51",
+		  "site": "Akron"
+		}
+	},
+  {
+		"date":	2001,
+		"Pitch": 45,
+		"motor": {
+		  "weight": 0.98,
+      "size": "42x45",
+		  "length": 18.0
+    },
+		"flight": {
+		  "turns": 3570,
+		  "time": "8:56",
+		  "site": "Akron"
+		}
+	},
+	{
+		"date":	2001,
+		"Pitch": 45,
+		"motor": {
+		  "weight": 0.0,
+      "size": "39x44",
+		  "length": 17.0
+    },
+		"flight": {
+		"turns": 2940,
+		"time": "8:35",
+		"site": "johnson City"
+		}
+	},
+	{
+		"date":	2002,
+		"Pitch": 45,
+		"motor": {
+		  "weight": 0.0,
+      "size": "39x40",
+		  "length": 18.0
+    },
+		"flight": {
+		"turns": 3550,
+		"time": "9:04",
+		"site": "Johnson City"
+		}
+	},
+	{
+		"date":	2003,
+		"Pitch": 45,
+		"motor": {
+		  "weight": 0.83,
+      "size": "0x0",
+		  "length": 18.0
+    },
+		"flight": {
+		  "turns": 3860,
+		  "time": "9:10",
+		  "site": "Johnson City"
+		}
+	},
+	{
+		"date":	2004,
+		"Pitch": 47,
+		"motor": {
+		  "weight": 0.88,
+      "size": "0x0",
+		  "length": 19.0
+    },
+		"flight": {
+		  "turns": 3820,
+		  "time": "9:54",
+		  "site": "Johnson City"
+		}
+	},
+	{
+
+		"date":	2005,
+		"Pitch": 47,
+		"motor": {
+		  "weight": 0.80,
+      "size": "35x40",
+		  "length": 18.0
+    },
+		"flight": {
+		  "turns": 3740,
+		  "time": "10:07",
+		  "site": "Johnson City"
+		}
+	},
+	{
+		"date":	2006,
+		"Pitch": 45,
+		"motor": {
+		  "weight": 0.82,
+      "size": "0x0",
+		  "length": 18.0
+    },
+		"flight": {
+		  "turns": 3900,
+		  "time": "10:05",
+		  "site": "Johnson City"
+		}
+	},
+	{
+		"date":	2006,
+		"Pitch": 42,
+		"motor": {
+		  "weight": 0.78,
+      "size": "31x0",
+		  "length": 18.5
+    },
+		"flight": {
+		  "turns": 3920,
+		  "time": "9:46",
+		  "site": "Johnson City"
+		}
+	},
+	{
+		"date":	2006,
+		"Pitch": 42,
+		"motor": {
+		  "weight": 0.75,
+      "size": "34x0?",
+		  "length": 18.0
+    },
+		"flight": {
+		  "turns": 3990,
+		  "time": "9:46",
+		  "site": "Johnson City"
+		}
+	},
+	{
+		"date":	2008,
+		"Pitch": 0,
+		"motor": {
+		  "weight": 0.86,
+      "size": "34x0",
+		  "length": 18.0
+    },
+		"flight": {
+		  "turns": 3880,
+		  "time": "9:45",
+		"site": "Johnson City"
+		}
+	},
+	{
+		"date":	2002,
+		"Pitch": 47,
+		"motor": {
+		  "weight": 0.91,
+      "size": "36x38",
+		  "length": 20.0
+    },
+		"flight": {
+		"turns": 3780,
+		"time": "10:07",
+		"site": "Kibbie Dome"
+		}
+	},
+	{
+		"date":	2002,
+		"Pitch": 47,
+		"motor": {
+		  "weight": 0.95,
+          "size": "0x0",
+		  "length": 18.0
+    },
+		"flight": {
+		  "turns": 3600,
+		  "time": "9:20",
+		  "site": "Kibbie Dome"
+		}
+	},
+	{
+		"date":	2003,
+		"Pitch": 45,
+		"motor": {
+		  "weight": 0.94,
+          "size": "0x0",
+		  "length": 19.0
+    },
+		"flight": {
+		  "turns": 4050,
+		  "time": "10:13",
+		  "site": "Kibbie Dome"
+		}
+	},
+	{
+		"date":	2003,
+		"Pitch": 47,
+		"motor": {
+		  "weight": 0.95,
+          "size": "0x0",
+		  "length": 19.0
+    },
+		"flight": {
+		  "turns": 3785,
+		  "time": "10:17",
+		  "site": "Kibbie Dome"
+		}
+	},
+	{
+		"date":	2003,
+		"Pitch": 47,
+		"motor": {
+		  "weight": 0.86,
+      "size": "0x0",
+		  "length": 18.0
+    },
+		"flight": {
+		  "turns": 3660,
+		  "time": "10:18",
+		  "site": "Kibbie Dome"
+		}
+	},
+	{
+		"date":	2004,
+		"Pitch": 45,
+		"motor": {
+		  "weight": 0.82,
+      "size": "0x0",
+		  "length": 18.0
+    },
+		"flight": {
+		  "turns": 3860,
+		  "time": "10:16",
+		  "site": "Kibbie Dome"		}
+	},
+	{
+		"date":	2004,
+		"Pitch": 45,
+		"motor": {
+		  "weight": 0.81,
+      "size": "0x0",
+		  "length": 18.0
+    },
+		"flight": {
+		  "turns": 3785,
+		  "time": "10:14",
+		  "site": "Kibbie Dome"
+		}
+	},
+	{
+		"date":	2004,
+		"Pitch": 45,
+		"motor": {
+		  "weight": 0.81,
+      "size": "0x0",
+		  "length": 18.0
+    },
+		"flight": {
+		  "turns": 3740,
+		  "time": "9:54",
+		  "site": "Kibbie Dome"
+		}
+	},
+	{
+		"date":	2005,
+		"Pitch": 40,
+		"motor": {
+		  "weight": 0.78,
+      "size": "35x40",
+		  "length": 18.0
+    },
+		"flight": {
+		  "turns": 3855,
+		  "time": "9:43",
+		  "site": "Kibbie Dome"
+		}
+	},
+	{
+		"date":	2008,
+		"Pitch": 45,
+		"motor": {
+		  "weight": 0.80,
+      "size": "0x0",
+		  "length": 18.0
+    },
+		"flight": {
+		  "turns": 3640,
+		  "time": "9:48",
+		  "site": "Kibbie Dome"
+		}
+	},
+	{
+		"date":	2002,
+		"Pitch": 45,
+		"motor": {
+		  "weight": 0.0,
+      "size": "39x44",
+		  "length": 17.0
+    },
+		"flight": {
+		  "turns": 2940,
+		  "time": "6:38",
+		  "site": "Beatrice"
+		}
+	},
+	{
+		"date":	2003,
+		"Pitch": 47,
+		"motor": {
+		  "weight": 0.74,
+      "size": "37x40",
+		  "length": 16.0
+    },
+		"flight": {
+		  "turns": 3075,
+		  "time": "6:45",
+		  "site": "Beatrice"
+		}
+	},
+	{
+		"date":	2004,
+		"Pitch": 47,
+		"motor": {
+		  "weight": 0.79,
+      "size": "37x40",
+		  "length": 18.0
+    },
+		"flight": {
+		  "turns": 3500,
+		  "time": "7:02",
+		  "site": "Beatrice"
+		}
+	},
+	{
+		"date":	2004,
+		"Pitch": 0,
+		"motor": {
+		  "weight": 0.95,
+      "size": "38x0",
+		  "length": 17.0
+    },
+		"flight": {
+		  "turns": 0,
+		  "time": "7:01",
+		  "site": "Beatrice"
+		}
+	},
+	{
+		"date":	2005,
+		"Pitch": 42,
+		"motor": {
+		  "weight": 0.84,
+      "size": "0x0",
+		  "length": 18.0
+    },
+		"flight": {
+		  "turns": 3300,
+		  "time": "7:20",
+		  "site": "Beatrice"
+		}
+	}
+]
+

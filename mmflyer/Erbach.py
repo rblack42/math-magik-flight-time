@@ -4,48 +4,79 @@
 #   ~~~~~~~~~
 #
 #   Python implementation of Walter Erbach's C64 Basic program
-#   from 1990 NFFS SYmposium (p79-85)
+#   from 1990 NFFS Symposium (p79-85)
 ###############################################################
 import numpy as np
+from scipy.interpolate import InterpolatedUnivariateSpline
+import matplotlib.pyplot as plt
 import pint
-import model as m
-from model import test_model as t
-u = pint.UnitRegistry()
+import yaml
 
+u = pint.UnitRegistry()
+Q_ = u.Quantity
 
 class Erbach(object):
 
-    def __init__(self, model):
-        self.model = model
+    def __init__(self, debug=False):
+        self.debug = debug
 
-    def query(self, xq, x, y):
-        # interpotate/extrapolate evenly spaced data
-        n = len(x)
-        x_l = x[n-1]
-        dx = x[1] - x[0]
 
-        if xq < x[0]:  # extrapolate left side
-            print("extrapolate left")
-            dydxl = (y[1] - y[0])/(x[1]-x[0])
-            return y[0] - dydxl * (x[0] - xq)
-        if xq > x[n-1]:
-            print("extrapolate right")
-            dydxr = (y[n-1] - y[n-2])/(x[n-1]-x[n-2])
-            return y[n-1]+dydxr * (xq - x[n-1])
-        # handle interpolation
-        print("interpolate")
-        # find interval for this query
-        yq = -100
-        for i in range(1,n):
-            il = i - 1
-            ir = i
-            if xq >= x[il] and xq <= x[ir]:
-                s = "*"
-                yq = y[il] + (y[ir] - y[il])/(x[ir]-x[il])*(xq-x[il])
-                break
-        return  yq
+    def load_curve(self, key, data):
+        """Load YAML curve data file"""
+        x = []
+        y = []
+        if key in data:
+            cl = data[key]
+            for line in cl:
+                a,b = line
+                x.append(a)
+                y.append(b)
+        return x,y
+
+    def fit_curve(self):
+        """Return a curve fit function using spline interpolation"""
+        xi = np.array(self.c_l_alpha)
+        yi = np.array(self.c_l)
+        x = np.linspace(-6, 20, 50)
+        order = 1
+        s = InterpolatedUnivariateSpline(xi, yi, k=order)
+        y = s(x)
+        plt.plot(x,y)
+        plt.show()
+
+    def load_model_data(self, data_fn):
+        """Load YAML model data file"""
+        with open(data_fn, "r") as stream:
+            try:
+                self.data = yaml.safe_load(stream)
+                print(self.data)
+                self.airfoil = self.data['airfoil']
+                print(self.airfoil)
+                self.c_l_alpha, self.c_l = self.load_curve('lift_coeff',self.airfoil)
+                self.c_d_alpha, self.c_d = self.load_curve('drag_coeff',self.airfoil)
+                self.model = self.data['model']
+                print(self.model)
+                self.load_model()
+
+            except yaml.YAMLError as exc:
+                print(exc)
+                data = {}
+
+        print(self.c_l_alpha, self.c_l)
+        print(self.c_d_alpha, self.c_d)
+        self.fit_curve()
+
+    def load_model(self):
+        data = self.model
+        wa_val, wa_units = data['model_weight']
+        wa = Q_(wa_val, wa_units)
+        print("Wing Area", wa)
+        print("base Units", wa.to_base_units())
 
     def power(self, WI, SA, CG, PCW):
+        self.fit_curve()
+        return
+
         print(WI, SA, CG, PCW)
         rho = 0.00119
         alpha_w = (WI - SA)   # Wing angle of attack
@@ -81,8 +112,5 @@ class Erbach(object):
 
 
 if __name__ == '__main__':
-    print(t)
-    for key in m.test_model:
-        print(key,m.test_model[key])
-    e = Erbach(m.test_model)
+    e = Erbach()
     e.power(4,-2,0.4,0.4)

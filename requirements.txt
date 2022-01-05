@@ -22,6 +22,8 @@ pint
 matplotlib
 git+git://github.com/mkrphys/ipython-tikzmagic.git
 pyyaml
+ipympl
+
 # Package management
 bump2version
 twine
