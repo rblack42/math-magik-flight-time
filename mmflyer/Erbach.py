@@ -33,17 +33,6 @@ class Erbach(object):
                 y.append(b)
         return x,y
 
-    def fit_curve(self):
-        """Return a curve fit function using spline interpolation"""
-        xi = np.array(self.c_l_alpha)
-        yi = np.array(self.c_l)
-        x = np.linspace(-6, 20, 50)
-        order = 1
-        s = InterpolatedUnivariateSpline(xi, yi, k=order)
-        y = s(x)
-        plt.plot(x,y)
-        plt.show()
-
     def load_model_data(self, data_fn):
         """Load YAML model data file"""
         with open(data_fn, "r") as stream:
